@@ -3,6 +3,7 @@
 import os
 import numpy as np
 import tensorflow as tf
+import matplotlib.pyplot as plt
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, Input
 from tensorflow.keras.utils import to_categorical
@@ -58,11 +59,29 @@ model = Sequential([
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 # Trenowanie modelu
-history = model.fit(X_train, y_train, epochs=100, validation_data=(X_val, y_val))
+history = model.fit(X_train, y_train, epochs=20, validation_data=(X_val, y_val))
 
 # Ewaluacja modelu
 val_loss, val_accuracy = model.evaluate(X_val, y_val)
 test_loss, test_accuracy = model.evaluate(X_test, y_test)
+
+# Plotting the learning and test loss curves
+plt.figure(figsize=(10, 5))
+
+# Plotting the training loss
+plt.plot(history.history['loss'], label='Training Loss')
+
+# Plotting the validation loss
+plt.plot(history.history['val_loss'], label='Validation Loss')
+
+plt.title('Learning and Test Loss Curves')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.legend()
+
+# Saving the plot as a PNG file
+plt.savefig('learning_test_loss_curves.png')
+plt.show()
 
 # Zapisanie modelu
 model.save('trained_model.h5')
