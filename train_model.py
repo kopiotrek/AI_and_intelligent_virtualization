@@ -59,7 +59,7 @@ model = Sequential([
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 # Trenowanie modelu
-history = model.fit(X_train, y_train, epochs=20, validation_data=(X_val, y_val))
+history = model.fit(X_train, y_train, epochs=100, validation_data=(X_val, y_val))
 
 # Ewaluacja modelu
 val_loss, val_accuracy = model.evaluate(X_val, y_val)
