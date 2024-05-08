@@ -5,7 +5,7 @@ import tensorflow as tf
 from sklearn.metrics import confusion_matrix
 
 # Załaduj wcześniej wytrenowany model
-model = tf.keras.models.load_model('trained_model.h5')
+model = tf.keras.models.load_model('trained_model2.h5')
 
 # Załaduj zbiór testowy (zakładając, że zostały zapisane jako pliki numpy)
 X_test = np.load('processed_spectrograms/X_test.npy')

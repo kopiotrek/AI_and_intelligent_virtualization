@@ -1,0 +1,4 @@
+Model 1: Batch size - 5, Validation Accuracy - 0.10000000149011612, Test Accuracy - 0.09000000357627869, Training Time - 122.69285845756531 seconds
+Model 2: Batch size - 10, Validation Accuracy - 0.15000000596046448, Test Accuracy - 0.10000000149011612, Training Time - 109.99806571006775 seconds
+Model 3: Batch size - 15, Validation Accuracy - 0.11999999731779099, Test Accuracy - 0.10000000149011612, Training Time - 127.7349419593811 seconds
+Model 4: Batch size - 20, Validation Accuracy - 0.1899999976158142, Test Accuracy - 0.10000000149011612, Training Time - 137.27598357200623 seconds

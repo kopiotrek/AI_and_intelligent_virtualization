@@ -1,0 +1,19 @@
+Model 1: Batch size - 10, Validation Accuracy - 0.41999998688697815, Test Accuracy - 0.3100000023841858, Training Time - 388.36053109169006 seconds
+Model 2: Batch size - 20, Validation Accuracy - 0.4000000059604645, Test Accuracy - 0.3400000035762787, Training Time - 375.38968300819397 seconds
+Model 3: Batch size - 50, Validation Accuracy - 0.4099999964237213, Test Accuracy - 0.3799999952316284, Training Time - 262.42529296875 seconds
+Model 4: Batch size - 60, Validation Accuracy - 0.5, Test Accuracy - 0.3499999940395355, Training Time - 199.77072954177856 seconds
+
+    model = Sequential([
+        Input(shape=(128, 128, 1)),
+        Conv2D(25, kernel_size=(3, 3), activation='relu'),
+        MaxPooling2D(pool_size=(2, 2)),
+        Conv2D(50, (3, 3), activation='relu'),
+        MaxPooling2D(pool_size=(2, 2)),
+        Conv2D(100, (3, 3), activation='relu'),
+        MaxPooling2D(pool_size=(2, 2)),
+        Flatten(),
+        Dropout(0.5),
+        Dense(100, activation='relu'),
+        Dropout(0.5),
+        Dense(num_classes, activation='softmax')
+    ])
