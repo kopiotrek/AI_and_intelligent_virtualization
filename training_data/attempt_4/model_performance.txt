@@ -1,0 +1,10 @@
+Model 1: Batch size - 50, Optimizer - Adadelta, Validation Accuracy - 0.09000000357627869, Test Accuracy - 0.09000000357627869, Training Time - 116.62655258178711 seconds
+Model 2: Batch size - 50, Optimizer - Adagrad, Validation Accuracy - 0.15000000596046448, Test Accuracy - 0.2199999988079071, Training Time - 122.91396999359131 seconds
+Model 3: Batch size - 50, Optimizer - Adam, Validation Accuracy - 0.4399999976158142, Test Accuracy - 0.33000001311302185, Training Time - 125.39541268348694 seconds
+Model 4: Batch size - 50, Optimizer - AdamW, Validation Accuracy - 0.36000001430511475, Test Accuracy - 0.3199999928474426, Training Time - 126.42003989219666 seconds
+Model 5: Batch size - 50, Optimizer - Adamax, Validation Accuracy - 0.3499999940395355, Test Accuracy - 0.27000001072883606, Training Time - 128.6998314857483 seconds
+Model 6: Batch size - 50, Optimizer - Ftrl, Validation Accuracy - 0.10000000149011612, Test Accuracy - 0.10000000149011612, Training Time - 126.40109729766846 seconds
+Model 7: Batch size - 50, Optimizer - Lion, Validation Accuracy - 0.4300000071525574, Test Accuracy - 0.3799999952316284, Training Time - 125.5548894405365 seconds
+Model 8: Batch size - 50, Optimizer - Nadam, Validation Accuracy - 0.4300000071525574, Test Accuracy - 0.3700000047683716, Training Time - 115.28694534301758 seconds
+Model 9: Batch size - 50, Optimizer - RMSprop, Validation Accuracy - 0.36000001430511475, Test Accuracy - 0.3199999928474426, Training Time - 119.68753933906555 seconds
+Model 10: Batch size - 50, Optimizer - SGD, Validation Accuracy - 0.15000000596046448, Test Accuracy - 0.1599999964237213, Training Time - 125.55855464935303 seconds
