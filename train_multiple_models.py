@@ -25,36 +25,41 @@ X, y, labels_map = load_data(processed_dir)
 # Number of classes
 num_classes = len(labels_map)
 # Maximum number of models to try
-max_models = 1
+max_models = 4
 # Parameters list
 # batch_size = [10, 20, 50, 60]
 # optimizers = ['RMSprop','SGD']
+layer_1 = [25,50,75,100]
+layer_2 = [50,100,150,200]
+layer_3 = [100,200,300,400]
+density = [100,200,300,400]
+
 # Loop for trying different models
 for i in range(max_models):
     # Build model
     model = Sequential([
         Input(shape=(128, 128, 1)),
-        Conv2D(50, kernel_size=(3, 3), activation='relu'),
+        Conv2D(layer_1[i], kernel_size=(3, 3), activation='relu'),
         MaxPooling2D(pool_size=(2, 2)),
-        Conv2D(100, (3, 3), activation='relu'),
+        Conv2D(layer_2[i], (3, 3), activation='relu'),
         MaxPooling2D(pool_size=(2, 2)),
-        Conv2D(200, (3, 3), activation='relu'),
+        Conv2D(layer_3[i], (3, 3), activation='relu'),
         MaxPooling2D(pool_size=(2, 2)),
         Flatten(),
         Dropout(0.5),
-        Dense(200, activation='relu'),
+        Dense(density[i], activation='relu'),
         Dropout(0.5),
         Dense(num_classes, activation='softmax')
     ])
     
     # Compile model
-    model.compile(optimizer='Lion', loss='categorical_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer='AdamW', loss='categorical_crossentropy', metrics=['accuracy'])
     
     # Record start time
     start_time = time.time()
     
     # Train model
-    history = model.fit(X_train, y_train, batch_size=50, epochs=50, validation_data=(X_val, y_val))
+    history = model.fit(X_train, y_train, batch_size=50, epochs=100, validation_data=(X_val, y_val))
     
     # Record end time
     end_time = time.time()
@@ -95,4 +100,4 @@ for i in range(max_models):
     plt.close()
     
     # Record model performance
-    with open('model_performance.txt', 'a') as f: f.write(f"Model {i+1}: Batch size - 50, Optimizer - Lion, Validation Accuracy - {val_accuracy}, Test Accuracy - {test_accuracy}, Training Time - {training_time} seconds\n")
+    with open('model_performance.txt', 'a') as f: f.write(f"Model {i+1}: architecture: layer_1 = {layer_1[i]},layer_2 = {layer_2[i]},layer_3 = {layer_3[i]},density = {density[i]}, Batch size - 50, Optimizer - AdamW, Validation Accuracy - {val_accuracy}, Test Accuracy - {test_accuracy}, Training Time - {training_time} seconds\n")

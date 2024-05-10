@@ -1,0 +1,6 @@
+Model 1: Batch size - 50, Optimizer - Lion, Validation Accuracy - 0.550000011920929, Test Accuracy - 0.49000000953674316, Training Time - 1410.9561586380005 seconds
+Model 1: Batch size - 50, Optimizer - Lion, Validation Accuracy - 0.5600000023841858, Test Accuracy - 0.38999998569488525, Training Time - 1520.7951197624207 seconds
+Model 1: architecture: layer_1 = 25,layer_2 = 50,layer_3 = 100,density = 100, Batch size - 50, Optimizer - AdamW, Validation Accuracy - 0.5699999928474426, Test Accuracy - 0.4399999976158142, Training Time - 609.3853764533997 seconds
+Model 2: architecture: layer_1 = 50,layer_2 = 100,layer_3 = 200,density = 200, Batch size - 50, Optimizer - AdamW, Validation Accuracy - 0.5099999904632568, Test Accuracy - 0.4300000071525574, Training Time - 1575.8927943706512 seconds
+Model 3: architecture: layer_1 = 75,layer_2 = 150,layer_3 = 300,density = 300, Batch size - 50, Optimizer - AdamW, Validation Accuracy - 0.6100000143051147, Test Accuracy - 0.4099999964237213, Training Time - 2929.977100610733 seconds
+Model 4: architecture: layer_1 = 100,layer_2 = 200,layer_3 = 400,density = 400, Batch size - 50, Optimizer - AdamW, Validation Accuracy - 0.5199999809265137, Test Accuracy - 0.4300000071525574, Training Time - 4385.861451148987 seconds
