@@ -25,26 +25,56 @@ X, y, labels_map = load_data(processed_dir)
 # Number of classes
 num_classes = len(labels_map)
 # Maximum number of models to try
-max_models = 4
+max_models = 1
 # Parameters list
 # batch_size = [10, 20, 50, 60]
 # optimizers = ['RMSprop','SGD']
-layer_1 = [25,50,75,100]
-layer_2 = [50,100,150,200]
-layer_3 = [100,200,300,400]
-density = [100,200,300,400]
+# layer_1 = [3,5,10]
+# layer_2 = [6,10,20]
+# layer_3 = [12,20,40]
+# layer_4 = [24,40,80]
+# layer_5 = [24,40,80]
+# layer_6 = [24,40,80]
+# density = [24,40,80]
+# layer_1 = [10,20,30]
+# layer_2 = [20,40,60]
+# layer_3 = [40,80,120]
+# layer_4 = [40,80,120]
+# layer_5 = [40,80,120]
+# layer_6 = [40,80,120]
+# density = [40,80,120]
+# layer_1 = [3,5,10,20,40,80]
+# layer_2 = [3,5,10,20,40,80]
+# layer_3 = [3,5,10,20,40,80]
+# layer_4 = [3,5,10,20,40,80]
+# layer_5 = [3,5,10,20,40,80]
+# layer_6 = [3,5,10,20,40,80]
+# density = [3,5,10,20,40,80]
+layer_1 = [3,40,80]
+layer_2 = [6,40,80]
+layer_3 = [12,40,80]
+layer_4 = [24,20,40]
+layer_5 = [48,10,20]
+layer_6 = [48,5,10]
+density = [48,5,10]
 
 # Loop for trying different models
 for i in range(max_models):
     # Build model
     model = Sequential([
         Input(shape=(128, 128, 1)),
-        Conv2D(layer_1[i], kernel_size=(3, 3), activation='relu'),
+        Conv2D(layer_1[i], kernel_size=(3, 3), activation='relu', padding='same'),
         MaxPooling2D(pool_size=(2, 2)),
-        Conv2D(layer_2[i], (3, 3), activation='relu'),
+        Conv2D(layer_2[i], (3, 3), activation='relu', padding='same'),
         MaxPooling2D(pool_size=(2, 2)),
-        Conv2D(layer_3[i], (3, 3), activation='relu'),
+        Conv2D(layer_3[i], (3, 3), activation='relu', padding='same'),
         MaxPooling2D(pool_size=(2, 2)),
+        Conv2D(layer_4[i], (3, 3), activation='relu', padding='same'),
+        MaxPooling2D(pool_size=(2, 2)),
+        Conv2D(layer_5[i], (3, 3), activation='relu', padding='same'),
+        MaxPooling2D(pool_size=(2, 2)),
+        # Conv2D(layer_6[i], (3, 3), activation='relu', padding='same'),
+        # MaxPooling2D(pool_size=(2, 2)),
         Flatten(),
         Dropout(0.5),
         Dense(density[i], activation='relu'),
@@ -100,4 +130,4 @@ for i in range(max_models):
     plt.close()
     
     # Record model performance
-    with open('model_performance.txt', 'a') as f: f.write(f"Model {i+1}: architecture: layer_1 = {layer_1[i]},layer_2 = {layer_2[i]},layer_3 = {layer_3[i]},density = {density[i]}, Batch size - 50, Optimizer - AdamW, Validation Accuracy - {val_accuracy}, Test Accuracy - {test_accuracy}, Training Time - {training_time} seconds\n")
+    with open('model_performance.txt', 'a') as f: f.write(f"Model {i+1}: architecture: layer_1 = {layer_1[i]},layer_2 = {layer_2[i]},layer_3 = {layer_3[i]},layer_4 = {layer_4[i]},layer_5 = {layer_5[i]},density = {density[i]}, Batch size - 50, Optimizer - AdamW, Validation Accuracy - {val_accuracy}, Test Accuracy - {test_accuracy}, Training Time - {training_time} seconds\n")

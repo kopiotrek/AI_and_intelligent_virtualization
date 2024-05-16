@@ -1,0 +1,4 @@
+Model 1: architecture: layer_1 = 5,layer_2 = 10,layer_3 = 20,density = 20, Batch size - 50, Optimizer - AdamW, Validation Accuracy - 0.47999998927116394, Test Accuracy - 0.33000001311302185, Training Time - 75.95094919204712 seconds
+Model 2: architecture: layer_1 = 10,layer_2 = 20,layer_3 = 40,density = 40, Batch size - 50, Optimizer - AdamW, Validation Accuracy - 0.5099999904632568, Test Accuracy - 0.5199999809265137, Training Time - 126.6682505607605 seconds
+Model 3: architecture: layer_1 = 15,layer_2 = 30,layer_3 = 60,density = 60, Batch size - 50, Optimizer - AdamW, Validation Accuracy - 0.49000000953674316, Test Accuracy - 0.4300000071525574, Training Time - 212.87781977653503 seconds
+Model 4: architecture: layer_1 = 20,layer_2 = 40,layer_3 = 80,density = 80, Batch size - 50, Optimizer - AdamW, Validation Accuracy - 0.5799999833106995, Test Accuracy - 0.5400000214576721, Training Time - 351.33280777931213 seconds
