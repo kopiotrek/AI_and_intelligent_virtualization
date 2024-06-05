@@ -1,0 +1,1 @@
+Model 3: architecture: layer_1 = 30,layer_2 = 60,layer_3 = 120,layer_4 = 120,layer_5 = 120,density = 120, Batch size - 50, Optimizer - AdamW, Validation Accuracy - 0.9024999737739563, Test Accuracy - 0.8974999785423279, Training Time - 3138.1161720752716 seconds

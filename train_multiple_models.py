@@ -36,6 +36,8 @@ max_models = 1
 # layer_5 = [24,40,80]
 # layer_6 = [24,40,80]
 # density = [24,40,80]
+
+# below worked fine
 # layer_1 = [10,20,30]
 # layer_2 = [20,40,60]
 # layer_3 = [40,80,120]
@@ -43,6 +45,14 @@ max_models = 1
 # layer_5 = [40,80,120]
 # layer_6 = [40,80,120]
 # density = [40,80,120]
+
+layer_1 = [30]
+layer_2 = [60]
+layer_3 = [120]
+layer_4 = [120]
+layer_5 = [120]
+layer_6 = [120]
+density = [120]
 # layer_1 = [3,5,10,20,40,80]
 # layer_2 = [3,5,10,20,40,80]
 # layer_3 = [3,5,10,20,40,80]
@@ -50,13 +60,13 @@ max_models = 1
 # layer_5 = [3,5,10,20,40,80]
 # layer_6 = [3,5,10,20,40,80]
 # density = [3,5,10,20,40,80]
-layer_1 = [3,40,80]
-layer_2 = [6,40,80]
-layer_3 = [12,40,80]
-layer_4 = [24,20,40]
-layer_5 = [48,10,20]
-layer_6 = [48,5,10]
-density = [48,5,10]
+# layer_1 = [3,40,80]
+# layer_2 = [6,40,80]
+# layer_3 = [12,40,80]
+# layer_4 = [24,20,40]
+# layer_5 = [48,10,20]
+# layer_6 = [48,5,10]
+# density = [48,5,10]
 
 # Loop for trying different models
 for i in range(max_models):
@@ -89,7 +99,7 @@ for i in range(max_models):
     start_time = time.time()
     
     # Train model
-    history = model.fit(X_train, y_train, batch_size=50, epochs=100, validation_data=(X_val, y_val))
+    history = model.fit(X_train, y_train, batch_size=50, epochs=40, validation_data=(X_val, y_val))
     
     # Record end time
     end_time = time.time()
